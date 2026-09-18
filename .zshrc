@@ -155,11 +155,13 @@ if [[ -f .config/tea/autocomplete.zsh ]]; then
    PROG=tea _CLI_ZSH_AUTOCOMPLETE_HACK=1 source .config/tea/autocomplete.zsh
 fi
 
-export PNPM_HOME=$HOME/.local/share/pnpm
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
+if [[ -d $HOME/.local/share/pnpm ]]; then
+    export PNPM_HOME=$HOME/.local/share/pnpm
+    case ":$PATH:" in
+	*":$PNPM_HOME:"*) ;;
+	*) export PATH="$PNPM_HOME:$PATH" ;;
+    esac
+fi
 
 # (( $+commands[zsh-patina] )) || { command -v cargo >/dev/null 2>&1 && cargo install zsh-patina }
 # (( $+commands[zsh-patina] )) && eval "$(zsh-patina activate)"
