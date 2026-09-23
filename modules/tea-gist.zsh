@@ -12,6 +12,4 @@ if [[ -n $commands[opengist-cli] ]]; then
     if [[ ! -f ${fpath[1]}/_opengist-cli ]]; then
         opengist-cli completion zsh >| "${fpath[1]}/_opengist-cli"
     fi
-
-    compdef tea-gist=opengist-cli
 fi

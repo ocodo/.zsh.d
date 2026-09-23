@@ -92,3 +92,5 @@ alias ocodo-page-runs='gh run list -R ocodo/ocodo-page'
 alias uvxytdlp-runs='gh run list -R ocodo/uvxytdlp'
 alias g-proot='git rev-parse --show-toplevel'
 alias ghopost='git push github --all && git push github --tags'
+alias clear-recent-gtk='rm /home/jason/.local/share/recently-used.xbel'
+

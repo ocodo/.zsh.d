@@ -173,3 +173,7 @@ fi
 [[ -x $HOME/.local/bin/env ]] && . $HOME/.local/bin/env
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+if [[ -n $commands[opengist-cli] ]]; then
+    compdef tea-gist=opengist-cli
+fi
